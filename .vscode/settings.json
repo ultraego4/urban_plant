@@ -1,0 +1,15 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.espIdfPath": "/home/gorilla/esp/esp-idf",
+    "idf.pythonInstallPath": "/usr/bin/python",
+    "idf.openOcdConfigs": [
+        "board/esp32s3-builtin.cfg"
+    ],
+    "idf.port": "/dev/ttyACM0",
+    "idf.toolsPath": "/home/gorilla/.espressif",
+    "clang-tidy.buildPath": "build",
+    "idf.flashType": "JTAG",
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32s3"
+    }
+}
