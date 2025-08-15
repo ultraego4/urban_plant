@@ -1,5 +1,31 @@
+# code
+
 build/
 sdkconfig
 sdkconfig.old
 .cache
 .devcontainer
+
+# tex
+
+*.aux
+*.bit 
+*.blg 
+*.bbl 
+*.lof 
+*.log 
+*.lot 
+*.glo 
+*.glx 
+*.gxg 
+*.gxs
+*.idx
+*.ilg
+*.ind
+*.out
+*.url
+*.svn
+*.toc
+*.run.xml
+*.bcf
+*.synctex.gz
