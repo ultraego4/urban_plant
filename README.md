@@ -7,16 +7,14 @@ This repository contains my "Optimization of Plant Growth on Urban Terraces Usin
 The project is developed in ESP-IDF and builds on an ESP32-S3 N16R8 with multiple sensors such as VEML7700, BME280 etc.
 
 
-Documentation is written in LaTeX.
+[Documentation](docs/urban_plant.pdf) is written in LaTeX.
 
 
 ![circuit](docs/assets/circuit_above.jpg)
 
-
-
 ## Setup
 
-1. Follow [ESP-IDF wiki](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/linux-macos-setup.html) and install. Set this useful alias so you can source the env:
+1. Follow [ESP-IDF wiki](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/linux-macos-setup.html) and install. Set this useful alias so you can source the tools:
 ```
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 ```
