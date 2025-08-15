@@ -13,17 +13,21 @@
 #include <veml7700.h>
 #include <bmp280.h>
 
+#include "esp_vfs_fat.h"
+
 
 typedef struct {
   i2c_dev_t *dev;
   veml7700_config_t *config;
 } veml7700_task_params_t;
 
+//I2C
 #define I2C_PORT I2C_NUM_0
-#define SDA_GPIO GPIO_NUM_13
-#define SCL_GPIO GPIO_NUM_14
+#define SDA_GPIO GPIO_NUM_4
+#define SCL_GPIO GPIO_NUM_5
 
 
+#define MOUNT_POINT "/sdcard"
 
 esp_err_t veml7700_setup(i2c_dev_t *dev,veml7700_config_t *config){
 
@@ -83,12 +87,11 @@ void veml7700_task(void *pvParameters){
   while (1) {
     esp_err_t err= veml7700_get_ambient_light(dev, config, &lux);
     if (err == ESP_OK){
-      ESP_LOGI("VEML7700", "Lux: %u", lux);
-    } else {
-      ESP_LOGE("VEML7700", "Read failed: %s", esp_err_to_name(err));    
+      printf("VEML7700,%u\n", (unsigned int) lux); 
     }
 
-    //1 sec delay
+
+    //1 sec delay 5*60*
     vTaskDelay(1000 / portTICK_PERIOD_MS);
 
   }
@@ -135,17 +138,15 @@ void bmp280_task(void *pvParameters){
       esp_err_t err = bmp280_read_float(dev, &temp, &pressure, &humidity);
 
       if (err == ESP_OK){
-        ESP_LOGI("BMP280", "Temperature: %.2f C, Humidity: %.2f %%, Pressure: %.2f Pa", temp,humidity, pressure);
-      } else {
-        ESP_LOGE("BMP280", "Read failed: %s", esp_err_to_name(err));    
+        printf("BMP280,%.2f,%.2f,%.2f\n", temp, humidity, pressure);
       }
 
-      //1 sec delay
+
+      //1 sec delay 5*60*
       vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 
 }
-
 
 
 
@@ -196,14 +197,4 @@ void app_main(void) {
     ESP_LOGE("BMP280", "Failed to create task!");
     
   }
-
 }
-
-
-  /* for (int i = 10; i >= 0; i--) {
-    printf("Restarting in %d seconds...\n", i);
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
-  }
-  printf("Restarting now.\n");
-  fflush(stdout);
-  esp_restart(); */

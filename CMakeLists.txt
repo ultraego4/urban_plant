@@ -12,4 +12,4 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 
 
-project(sun_meter)
+project(urban_plant)
