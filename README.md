@@ -6,7 +6,12 @@ This repository contains my "Optimization of Plant Growth on Urban Terraces Usin
 
 The project is developed in ESP-IDF and builds on an ESP32-S3 N16R8 with multiple sensors such as VEML7700, BME280 etc.
 
+
 Documentation is written in LaTeX.
+
+
+![circuit](docs/assets/circuit_above.jpg)
+
 
 
 ## Setup
