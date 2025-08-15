@@ -27,8 +27,6 @@ typedef struct {
 #define SCL_GPIO GPIO_NUM_5
 
 
-#define MOUNT_POINT "/sdcard"
-
 esp_err_t veml7700_setup(i2c_dev_t *dev,veml7700_config_t *config){
 
 
