@@ -12,13 +12,17 @@ Documentation is written in LaTeX.
 ## Setup
 
 1. Follow [ESP-IDF wiki](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/linux-macos-setup.html) and install. Set this useful alias so you can source the env:
-
 ```
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 ```
-
-
-2. Clone the repository and cd:
+2. Clone the used sensor library and copy the components folder:
+```
+cd ~/esp && git clone https://github.com/UncleRus/esp-idf-lib
+```
+```
+mkdir -p ~/esp/esp-idf/components && cp -rf ~/esp/esp-idf-lib/components/* ~/esp/esp-idf/components/
+```
+3. Clone the repository and cd:
 
 ```
 git clone https://github.com/ultraego4/urban_plant.git && cd urban_plant
@@ -31,25 +35,15 @@ git clone https://github.com/ultraego4/urban_plant.git && cd urban_plant
 ```
 get_idf
 ```
-
-2. For setup:
-
-```
-idf.py menuconfig
-```
-
-3. Build the project:
-
+2. Build the project:
 ```
 idf.py build
 ```
-
-4. Flash the device (use your own device path)
+3. Flash the device (use your own device path)
 ```
 idf.py -p /dev/ttyACM0 flash
 ```
-
-5. Monitor the device:
+4. Monitor the device:
 ```
 idf.py -p /dev/ttyACM0 monitor
 ```
