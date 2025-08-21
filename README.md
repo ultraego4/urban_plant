@@ -34,33 +34,27 @@ git clone https://github.com/ultraego4/urban_plant.git && cd urban_plant
 
 ## How to Use
 
-
 1. Source the ESP-IDF environment:
    ```bash
    get_idf
    ```
 
-2. List available targets:
+2. Set target:
    ```bash
-   idf.py --list-targets
+   idf.py --list-targets && idf.py set-target esp32s3
    ```
 
-3. Set your target:
-   ```bash
-   idf.py set-target <target>
-   ```
-
-4. Build the project:
+3. Build the project:
    ```bash
    idf.py build
    ```
 
-5. Flash the device (replace `/dev/ttyACM0` with your own device path):
+4. Flash the device (replace `/dev/ttyACM0` with your own device path):
    ```bash
    idf.py -p /dev/ttyACM0 flash
    ```
 
-6. Monitor the device output:
+5. Monitor the device output:
    ```bash
    idf.py -p /dev/ttyACM0 monitor
    ```
