@@ -32,22 +32,36 @@ git clone https://github.com/ultraego4/urban_plant.git && cd urban_plant
 ```
 
 
-## How to use
+## How to Use
 
-1. Source the env:
-```
-get_idf
-```
-2. Build the project:
-```
-idf.py build
-```
-3. Flash the device (use your own device path)
-```
-idf.py -p /dev/ttyACM0 flash
-```
-4. Monitor the device:
-```
-idf.py -p /dev/ttyACM0 monitor
-```
+
+1. Source the ESP-IDF environment:
+   ```bash
+   get_idf
+   ```
+
+2. List available targets:
+   ```bash
+   idf.py --list-targets
+   ```
+
+3. Set your target:
+   ```bash
+   idf.py set-target <target>
+   ```
+
+4. Build the project:
+   ```bash
+   idf.py build
+   ```
+
+5. Flash the device (replace `/dev/ttyACM0` with your own device path):
+   ```bash
+   idf.py -p /dev/ttyACM0 flash
+   ```
+
+6. Monitor the device output:
+   ```bash
+   idf.py -p /dev/ttyACM0 monitor
+   ```
 
