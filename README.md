@@ -15,19 +15,19 @@ The project is developed in ESP-IDF and builds on an ESP32-S3 N16R8 with multipl
 ## Setup
 
 1. Follow [ESP-IDF wiki](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/linux-macos-setup.html) and install. Set this useful alias so you can source the tools:
-```
+```bash
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 ```
 2. Clone the used sensor library and copy the components folder:
-```
+```bash
 cd ~/esp && git clone https://github.com/UncleRus/esp-idf-lib
 ```
-```
+```bash
 mkdir -p ~/esp/esp-idf/components && cp -rf ~/esp/esp-idf-lib/components/* ~/esp/esp-idf/components/
 ```
 3. Clone the repository and cd:
 
-```
+```bash
 git clone https://github.com/ultraego4/urban_plant.git && cd urban_plant
 ```
 
