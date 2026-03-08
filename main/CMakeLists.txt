@@ -1,9 +1,2 @@
-idf_component_register(
-    SRCS
-        "app_main.c"
-        "sensors/veml7700_sensor.c"
-        "sensors/bmp280_sensor.c"
-    INCLUDE_DIRS
-        "."
-        "sensors"
-)
+idf_component_register(SRCS "app_main.c"
+                    INCLUDE_DIRS ".")
