@@ -1,0 +1,10 @@
+idf_component_register(
+    SRCS
+        "bmp280_sensor.c"
+        "veml7700_sensor.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        esp-idf-lib__bmp280
+        esp-idf-lib__veml7700 
+)

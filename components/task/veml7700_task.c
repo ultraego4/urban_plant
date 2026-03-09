@@ -1,8 +1,9 @@
-#include "veml7700_task.h"
-#include "veml7700_sensor.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+
 #include "esp_log.h"
+
+#include "veml7700_sensor.h"
 
 static const char *TAG = "VEML7700_TASK";
 

@@ -2,9 +2,10 @@
 #include <string.h>
 
 #include "esp_err.h"
+#include "esp_log.h"
+
 #include "veml7700.h"
 #include "i2cdev.h"
-#include "esp_log.h"
 
 
 //TODO move this out
@@ -78,7 +79,6 @@ esp_err_t veml7700_sensor_init(void){
     }
 
     return err;
-
 
 }
 
