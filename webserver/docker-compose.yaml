@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  webserver:
+    build: .
+    container_name: urban_plant_web
+    ports:
+      - "5000:5000"
+    volumes:
+      - /mnt/ssd1/urban_plant_web:/app/data
+    restart: always
