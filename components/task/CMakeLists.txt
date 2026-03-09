@@ -2,8 +2,11 @@ idf_component_register(
     SRCS
         "bmp280_task.c"
         "veml7700_task.c"
+        "http_post_task.c"
     INCLUDE_DIRS
         "include"
     REQUIRES
         sensor
+        telemetry
+        network
 )

@@ -9,6 +9,10 @@
 #include "bmp280_sensor.h"
 #include "bmp280_task.h"
 
+#include "telemetry.h"
+
+#include "http_post_task.h"
+
 
 
 //static const char *TAG = "MAIN";
@@ -25,13 +29,19 @@ void app_main(void) {
 
     wifi_station_init();
 
+    telemetry_queue_init(); 
+
 
     /*SENSORS*/
 
     ESP_ERROR_CHECK(veml7700_sensor_init());
     ESP_ERROR_CHECK(bmp280_sensor_init());
 
+    http_post_task_start();
+
     veml7700_task_start();
     bmp280_task_start();
+
+
 
 }

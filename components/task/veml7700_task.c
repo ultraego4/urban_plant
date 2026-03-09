@@ -4,20 +4,31 @@
 #include "esp_log.h"
 
 #include "veml7700_sensor.h"
+#include "veml7700_task.h"
+#include "telemetry.h"
 
 static const char *TAG = "VEML7700_TASK";
 
-static void veml7700_task(void *arg) {
-    uint32_t als;
-    while (1) {
+extern QueueHandle_t sensor_data_queue;
 
+static void veml7700_task(void *arg) {
+
+    static sensor_data_t msg = {0};
+    uint32_t als;
+
+    while (1) {
         if (veml7700_sensor_read(&als) == ESP_OK) {
             ESP_LOGI(TAG,"ALS: %u lx", als);
-        } else {
+
+            msg.type = SENSOR_VEML7700;
+            msg.veml.lux = als;
+
+            xQueueSend(sensor_data_queue, &msg, 0);
+        }
+        else{
             ESP_LOGW(TAG, "Sensor read failed!");
         }
-
-        //poll every 1s
+        //poll every 1 sec
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
