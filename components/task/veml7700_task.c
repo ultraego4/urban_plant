@@ -28,8 +28,8 @@ static void veml7700_task(void *arg) {
         else{
             ESP_LOGW(TAG, "Sensor read failed!");
         }
-        //poll every 1 sec
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        //poll every 1 minutes
+        vTaskDelay(pdMS_TO_TICKS(60000));
     }
 }
 

@@ -13,8 +13,7 @@ extern QueueHandle_t sensor_data_queue;
 
 static void bmp280_task(void *arg) {
     static sensor_data_t msg = {0};
-    // reset flag
-    static bool bmp_ready = false;
+
     float temperature, pressure, humidity;
 
     while (1) {
@@ -31,8 +30,8 @@ static void bmp280_task(void *arg) {
         else{
             ESP_LOGW(TAG, "Sensor read failed!");
         }
-        //poll every 1 sec
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        //poll every 1 minutes
+        vTaskDelay(pdMS_TO_TICKS(60000));
     }
 }
 
