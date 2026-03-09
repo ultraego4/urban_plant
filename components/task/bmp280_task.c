@@ -16,6 +16,10 @@ static void bmp280_task(void *arg) {
 
     float temperature, pressure, humidity;
 
+    //wait 1 sec before first read so the sensor has time to init
+    //there was invalid reading on the first tries when testing
+    vTaskDelay(pdMS_TO_TICKS(1000));
+
     while (1) {
         if (bmp280_sensor_read(&temperature, &pressure, &humidity) == ESP_OK) {
             ESP_LOGI(TAG," Temperature: %.2f C, Pressure: %.2f Pa, Humidity: %.2f",temperature,pressure,humidity);

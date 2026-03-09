@@ -16,6 +16,10 @@ static void veml7700_task(void *arg) {
     static sensor_data_t msg = {0};
     uint32_t als;
 
+    //wait 1 sec before first read so the sensor has time to init
+    //there was invalid reading on the first tries when testing
+    vTaskDelay(pdMS_TO_TICKS(1000));
+
     while (1) {
         if (veml7700_sensor_read(&als) == ESP_OK) {
             ESP_LOGI(TAG,"ALS: %u lx", als);
