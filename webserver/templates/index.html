@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Monitor Dashboard</title>
+</head>
+<body>
+    <h1>Plant Monitor Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Temperature (°C)</th>
+            <th>Pressure (hPa)</th>
+            <th>Humidity (%)</th>
+            <th>Illuminance (Lux)</th>
+        </tr>
+        {% for m in measurements %}
+        <tr>
+            <td>{{ m.received_at | round(0) }}</td>
+            <td>{{ m.temperature }}</td>
+            <td>{{ m.pressure }}</td>
+            <td>{{ m.humidity }}</td>
+            <td>{{ m.lux }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
