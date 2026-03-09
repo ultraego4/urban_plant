@@ -1,7 +1,5 @@
 # code
 
-archive/
-
 build/
 sdkconfig
 sdkconfig.old
