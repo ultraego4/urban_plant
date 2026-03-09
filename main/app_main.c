@@ -13,13 +13,15 @@
 
 #include "http_post_task.h"
 
+#include "sntp_sync.h"
 
 
 //static const char *TAG = "MAIN";
 
 void app_main(void) {
 
-    //Initialize NVS
+
+    //TODO move this out, initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
       ESP_ERROR_CHECK(nvs_flash_erase());
@@ -29,10 +31,10 @@ void app_main(void) {
 
     wifi_station_init();
 
+    initialize_sntp();
+    wait_for_sntp_sync();
+
     telemetry_queue_init(); 
-
-
-    /*SENSORS*/
 
     ESP_ERROR_CHECK(veml7700_sensor_init());
     ESP_ERROR_CHECK(bmp280_sensor_init());
