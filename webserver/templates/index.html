@@ -15,7 +15,7 @@
         </tr>
         {% for m in measurements %}
         <tr>
-            <td>{{ m.received_at | round(0) }}</td>
+            <td>{{ m.timestamp }}</td>
             <td>{{ m.temperature }}</td>
             <td>{{ m.pressure }}</td>
             <td>{{ m.humidity }}</td>
