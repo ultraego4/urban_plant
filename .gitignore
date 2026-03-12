@@ -8,6 +8,10 @@ sdkconfig.old
 .cache
 .devcontainer
 
+#python
+venv/
+__pycache__/
+
 # tex
 
 *.aux
