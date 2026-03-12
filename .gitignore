@@ -1,5 +1,7 @@
 # code
 
+components/network/include/credentials.h
+
 build/
 sdkconfig
 sdkconfig.old

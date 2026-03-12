@@ -7,7 +7,7 @@
 static const char* TAG = "HTTP_CLIENT";
 
 //hardcoded ;)
-#define URL "http://192.168.1.100:5000/api/measurements"
+#define URL "http://192.168.1.103:5000/api/measurements"
 
 void http_post_to_url(const char *payload)
 {

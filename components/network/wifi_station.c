@@ -23,6 +23,8 @@
 
 #include "wifi_station.h"
 
+#include "credentials.h"
+
 /* The examples use WiFi configuration that you can set via project configuration menu
 
    If you'd rather not, just change the below entries to strings with
@@ -30,8 +32,8 @@
 */
 
 //TODO reimplement this
-#define ESP_WIFI_SSID      "example"
-#define ESP_WIFI_PASS      "example"
+#define ESP_WIFI_SSID SSID   
+#define ESP_WIFI_PASS PASSWORD 
 #define ESP_MAXIMUM_RETRY  3
 
 /* FreeRTOS event group to signal when we are connected*/
