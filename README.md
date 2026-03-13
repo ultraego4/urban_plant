@@ -12,7 +12,7 @@ Some key concepts of the project:
 
 For other planned improvements and developments check the [## Future improvements (think-tank)](#future-improvements-think-tank) segment. 
 
-The project is developed in ESP-IDF and (currently) builds on an ESP32-S3 N16R8 with multiple sensors such as VEML7700, BMP280 etc. Flask webapp is used for the backend using an sqlite database.The [Documentation](docs/urban_plant.pdf) is written in LaTeX.
+The project is developed in ESP-IDF and (currently) builds on an ESP32-S3 N16R8 with multiple sensors such as VEML7700, BMP280 etc. Flask webapp is used for the backend using an sqlite database.The data analysis is done via python and the [Documentation](docs/urban_plant.pdf) is written in LaTeX.
 
 
 <img src="docs/assets/device_in_plant_box.jpg" alt="circuit" width="500">
@@ -62,7 +62,7 @@ git clone https://github.com/ultraego4/urban_plant.git
 
 Currently the main logical blocks of the project are:
 - App for the ESP
-- Flask backend webapp
+- Flask backend webapp with sqlite database
 - Data analysis
 - Documentation in LaTeX
 
